@@ -1,0 +1,17 @@
+# dbt
+target/
+dbt_packages/
+logs/
+dbt_internal_packages/
+
+# large data (không push)
+data/
+*.parquet
+*.gz
+*.duckdb
+
+# ignore CSV lớn nhưng vẫn giữ seeds
+data/*.csv
+
+# môi trường
+.env
