@@ -46,50 +46,67 @@ taxi_drives_ny/
 ├── ingest.py                  # Python script for raw data ingestion
 ├── dbt_project.yml            # dbt project configuration
 └── packages.yml               # dbt package dependencies
-```text
+
+---
+
 🚀 Getting Started
-Prerequisites
+⚙️ Prerequisites
+
+Before running this project, make sure you have:
+
 Python 3.8+
-dbt-core and the specific adapter for your Data Warehouse (e.g., dbt-postgres, dbt-bigquery, dbt-snowflake).
-A running instance of your chosen Data Warehouse.
-1. Clone the repository
-code
-Bash
+dbt-core and a compatible adapter
+(e.g., dbt-duckdb, dbt-postgres, dbt-bigquery, dbt-snowflake)
+A configured data warehouse environment
+1️⃣ Clone the repository
 git clone <your-repository-url>
 cd taxi_drives_ny
-2. Install dependencies
+2️⃣ Install dependencies
+
 It is recommended to use a virtual environment:
-code
-Bash
+
 python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-pip install -r requirements.txt # Make sure dbt-core and your adapter are listed here
-3. Configure your profile
-Ensure your ~/.dbt/profiles.yml is configured to connect to your target data warehouse. The profile name should match the one defined in dbt_project.yml (e.g., taxi_drives_ny).
-4. Ingest Raw Data
-Run the ingestion script to download and load the raw NYC Taxi data into your data warehouse:
-code
-Bash
+venv\Scripts\activate   # Windows
+# source venv/bin/activate  # Mac/Linux
+
+pip install -r requirements.txt
+3️⃣ Configure dbt profile
+
+Ensure your dbt profile is correctly set up:
+
+File location: ~/.dbt/profiles.yml
+Profile name must match dbt_project.yml (e.g., taxi_drives_ny)
+4️⃣ Ingest raw data
+
+Run the ingestion script to load NYC Taxi data:
+
 python ingest.py
-5. Run dbt
-Execute the following dbt commands to build the project:
-code
-Bash
-# 1. Install dbt packages (e.g., dbt-utils)
+5️⃣ Run dbt pipeline
+
+Execute the following commands:
+
+# Install dbt packages (e.g., dbt-utils)
 dbt deps
 
-# 2. Load the seed file (taxi zones) into the database
+# Load seed data (taxi zones)
 dbt seed
 
-# 3. Run all models
+# Run models
 dbt run
 
-# 4. Test the models (Primary keys, null checks, accepted values, etc.)
+# Run tests (data quality checks)
 dbt test
-📊 Generating Documentation
-To generate and view the project's data dictionary and lineage graph (DAG), run:
-code
-Bash
+📊 Documentation & Lineage
+
+Generate and explore the dbt documentation:
+
 dbt docs generate
 dbt docs serve
-This will open a local web server (typically at http://localhost:8080) where you can explore the relationships between your source data, staging models, facts, dimensions, and reports.
+
+👉 Open in browser: http://localhost:8080
+
+You can explore:
+
+Data lineage (DAG)
+Model dependencies
+Table documentation
