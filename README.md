@@ -46,6 +46,7 @@ taxi_drives_ny/
 ├── ingest.py                  # Python script for raw data ingestion
 ├── dbt_project.yml            # dbt project configuration
 └── packages.yml               # dbt package dependencies
+```text
 🚀 Getting Started
 Prerequisites
 Python 3.8+
