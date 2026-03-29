@@ -78,19 +78,26 @@ python ingest.py
 Execute the following dbt commands to build the project:
 code
 Bash
+---
 # 1. Install dbt packages (e.g., dbt-utils)
 ```bash
 dbt deps
-
+```
 # 2. Load the seed file (taxi zones) into the database
+```bash
 dbt seed
+```
 
 # 3. Run all models
+```bash
 dbt run
-
+```
 # 4. Test the models (Primary keys, null checks, accepted values, etc.)
+```bash
 dbt test
-📊 Generating Documentation
+```
+---
+# 📊 Generating Documentation
 To generate and view the project's data dictionary and lineage graph (DAG), run:
 code
 Bash
