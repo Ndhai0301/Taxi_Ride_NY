@@ -79,6 +79,7 @@ Execute the following dbt commands to build the project:
 code
 Bash
 # 1. Install dbt packages (e.g., dbt-utils)
+```bash
 dbt deps
 
 # 2. Load the seed file (taxi zones) into the database
